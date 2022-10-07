@@ -3,6 +3,7 @@ var c = canvas.getContext("2d");
 let radius = canvas.height / 2;
 c.translate(radius,radius);
 radius = radius * 0.90;
+
 const drawFace = () => {
     let grad;
     c.beginPath();
@@ -73,7 +74,7 @@ const drawHand = (c,pos,length,width) =>{
     c.rotate(-pos);
 }
 
-function drawClock(){
+const drawClock = () =>{
     drawFace(c,radius);
     drawNumbers(c,radius);
     drawTime(c,radius);
@@ -88,5 +89,7 @@ const RGB = () => {
     return randomRGB;
 };
 
-setInterval(drawClock,1000);
+setInterval(drawClock,1000); //Async
 
+//Ayush Shrivastav
+// ayushshrivastav575@gmail.com 
