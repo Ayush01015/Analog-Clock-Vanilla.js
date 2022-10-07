@@ -92,4 +92,4 @@ const RGB = () => {
 setInterval(drawClock,1000); //Async
 
 //Ayush Shrivastav
-// ayushshrivastav575@gmail.com 
+// Contact : ayushshrivastav575@gmail.com 
