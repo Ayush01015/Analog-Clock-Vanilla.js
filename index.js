@@ -88,7 +88,5 @@ const RGB = () => {
     return randomRGB;
 };
 
-drawClock();
-
-
+setInterval(drawClock,1000);
 
