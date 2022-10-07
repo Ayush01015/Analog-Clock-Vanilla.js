@@ -8,13 +8,13 @@ const drawFace = () => {
     let grad;
     c.beginPath();
     c.arc(0,0,radius,0,2*Math.PI);
-    c.fillStyle = 'white';
+    c.fillStyle = 'white'; //RGB(); just for fun
     c.fill();
     grad = c.createRadialGradient(0,0,radius*0.95,0,0,radius*1.05);
     grad.addColorStop(0,'#333');
     grad.addColorStop(0.5,'white');
     grad.addColorStop(1,'#333');
-    c.strokeStyle = grad;
+    c.strokeStyle = grad; //RGB(); just for fun
     c.lineWidth = radius*0.05;
     c.stroke();
     c.beginPath();
