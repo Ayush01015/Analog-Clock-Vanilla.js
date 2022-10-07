@@ -42,9 +42,41 @@ const drawNumbers = (c,radius) =>{
 
 }
 
+const drawTime = (c,radius) =>{
+    let now = new Date();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(c,hour,radius*(0.5),radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+
+    (second*Math.PI/(30*60));
+    drawHand(c,minute,radius*0.8,radius*0.07);
+    //second
+    second=(second*Math.PI/30);
+    drawHand(c,second,radius*0.9,radius*0.02);
+}
+
+const drawHand = (c,pos,length,width) =>{
+    c.beginPath();
+    c.lineWidth = width;
+    c.lineCap = 'round';
+    c.moveTo(0,0);
+    c.rotate(pos);
+    c.lineTo(0,-length);
+    c.stroke();
+    c.rotate(-pos);
+}
+
 function drawClock(){
     drawFace(c,radius);
     drawNumbers(c,radius);
+    drawTime(c,radius);
 }
 
 
